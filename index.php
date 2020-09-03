@@ -3,24 +3,28 @@ Creiamo un array contenente le partite di basket di un'ipotetica tappa del calen
 Olimpia Milano - Cantù | 55-60 -->
 <?php
   $partite = [
-    [
-  'team1' = 'Olimpia MIlano',
-  'team2' = 'Cantù',
-  'score1' = 55,
-  'score2' = 50,
+    'Serie B' => [
+      'team1' => 'Olimpia MIlano',
+      'team2' => 'Cantù',
+      'score1' => 55,
+      'score2' => 50
     ],
-    [
-  'team1' = 'Firenze',
-  'team2' = 'Napoli',
-  'score1' = 50,
-  'score2' = 20
-    ],
+    'Serie C' => [
+  'team1' => 'Firenze',
+  'team2' => 'Napoli',
+  'score1' => 50,
+  'score2' => 20
+    ]
   ];
 
-  foreach ($partite as $m) {
-    echo $m['team1'] . ' - ' . $m['team2'] . ' | ' . $m['score1'] . ' - ' . $m['score2'],
-    echo '<br>',
-  }
+  $keys = array_keys($partite);
+    for ($i=0;$i<count($keys);$i++) {
+        $key = $keys[$i];
+        $m = $partite[$key];
+        echo $m['team1'] . ' - ' . $m['team2']
+            . ' | ' . $m['score1'] . '-' . $m['score2']
+            . '<br>';
+          }
 ?>
 <!-- Snack 2
 Passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione) che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. Se tutto è ok stampare "Accesso riuscito", altrimenti "Accesso negato" -->
